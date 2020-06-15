@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>jQuery ToDo slide-animation</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+            li {
+                    background-color: #454545;
+					color: whitesmoke;
+                    list-style-type: none;
+            }
+    </style>
+</head>
+<body>
+    <div id="animate">
+        <h1>ToDo:</h1>
+    </div>
+    <ul>
+            <li>stand up</li>
+            <li>make coffee</li>
+            <li>go and code something</li>
+            <li>make a break</li>
+            <li>code mote</li>
+    </ul>
+    <script>
+    $(document).ready(function() {
+        $('li').on('click', function() {
+                $(this).animate({
+                        opacity: 0.0,
+                        paddingLeft: '+=80'
+                    }, 500, function() {
+                        $(this).remove();
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
